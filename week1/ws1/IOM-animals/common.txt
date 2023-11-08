@@ -1,0 +1,14 @@
+amphibians.txt:common frog
+amphibians.txt:common toad
+birds.txt:common chaffinch
+birds.txt:common scoter
+insects.txt:common blue
+insects.txt:common blue damselfly
+insects.txt:common darter
+insects.txt:common earwig
+insects.txt:common green grasshopper
+insects.txt:common hawker
+insects.txt:herris lacustris (common pondskater)
+mammals.txt:common pipistrelle
+mammals.txt:common seal
+reptiles.txt:common lizard
