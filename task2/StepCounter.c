@@ -68,49 +68,49 @@ void tokeniseRecord(const char *input, const char *delimiter,
                     }
 
 // Function for menu
-void showTotalRecords() {
+void ShowTotalRecords() {
     printf("Total records: %d\n", record_count);
 }
 
-void findMinStepPeriod() {
+void FindFewStepPeriod() {
     if (record_count ==0) {
         printf("No data available.\n");
         return;
     }
 
-    int minSteps = records[0].steps;
-    int minIndex = 0;
+    int FewSteps = records[0].steps;
+    int FewIndex = 0;
 
     for (int i = 1; i < record_count; i++) {
-        if(records[i].steps < minSteps){
-            minSteps = records[i].steps;
-            minIndex = i;
+        if(records[i].steps < FewSteps){
+            FewSteps = records[i].steps;
+            FewIndex = i;
         }
     }
 
-    printf("Fewest steps: %s %s\n", records[minIndex].date, records[minIndex].time);
+    printf("Fewest steps: %s %s\n", records[FewIndex].date, records[FewIndex].time);
 }
 
-void findMaxStepPeriod() {
+void FindLargeStepPeriod() {
     if (record_count == 0) {
         printf("No data available.\n");
         return;
     }
 
-    int maxSteps = records[0].steps;
-    int maxIndex = 0;
+    int LargeSteps = records[0].steps;
+    int LargeIndex = 0;
 
     for (int i = 1; i < record_count; i++) {
-        if (records[i].steps > maxSteps) {
-            maxSteps = records[i].steps;
-            maxIndex = i;
+        if (records[i].steps > LargeSteps) {
+            LargeSteps = records[i].steps;
+            LargeIndex = i;
         }
     }
 
-    printf("Largest steps: %s %s\n", records[maxIndex].date, records[maxIndex].time);
+    printf("Largest steps: %s %s\n", records[LargeIndex].date, records[LargeIndex].time);
 }
 
-void calculateAverageSteps() {
+void CalculateMeanSteps() {
     if (record_count == 0) {
         return;
     }
@@ -119,11 +119,11 @@ void calculateAverageSteps() {
     for (int i = 0; i < record_count; i++) {
         totalSteps += records[i].steps;
     }
-    double averageSteps = (double)totalSteps / record_count;
-    printf("Mean step count: %.f\n", averageSteps);
+    double MeanSteps = (double)totalSteps / record_count;
+    printf("Mean step count: %.f\n", MeanSteps);
 }
 
-void findLongestOver500StepsPeriod() {
+void FindLongestOver500StepsPeriod() {
     if (record_count == 0) {
         printf("No data available.\n");
         return;
@@ -191,7 +191,7 @@ int main() {
             break;
         case 'B': case 'b':
             if (fileLoaded) {
-                showTotalRecords();
+                ShowTotalRecords();
             }
             else {
                 printf("No file loaded.\n");
@@ -199,7 +199,7 @@ int main() {
             break;
         case 'C': case 'c':
             if (fileLoaded) {
-                findMinStepPeriod();
+                FindFewStepPeriod();
             }
             else {
                 printf("No file loaded.\n");
@@ -207,7 +207,7 @@ int main() {
             break;
         case 'D': case 'd':
             if (fileLoaded) {
-                findMaxStepPeriod();
+                FindLargeStepPeriod();
             }
             else {
                 printf("No file loaded.\n");
@@ -215,7 +215,7 @@ int main() {
             break;
         case 'E': case 'e':
             if (fileLoaded) {
-                calculateAverageSteps();
+                CalculateMeanSteps();
             }
             else {
                 printf("No file loaded.\n");
@@ -223,7 +223,7 @@ int main() {
             break;
         case 'F': case 'f':
             if (fileLoaded) {
-                findLongestOver500StepsPeriod();
+                FindLongestOver500StepsPeriod();
             }
             else {
                 printf("No file loaded.\n");
