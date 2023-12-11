@@ -15,7 +15,7 @@ int readCSV(const char* filename) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
         printf("File not found\n");
-        return 0;
+        return 1;
     }
     else {
         char line[100];
@@ -35,7 +35,7 @@ int readCSV(const char* filename) {
             }
         }
         fclose(file);
-        return 1;
+        return 0;
     }
 }
 
@@ -181,7 +181,7 @@ int main() {
         case 'A': case 'a': 
             printf("Input filename: ");
             scanf("%s", filename);
-            if (readCSV(filename) == 1) {
+            if (readCSV(filename) == 0) {
                 fileLoaded = 1;
                 printf("File successfully loaded.\n");
             }
